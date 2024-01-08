@@ -97,6 +97,7 @@ const SinglePlace = (props: pageType) => {
                 break;
 
         }
+        
     }
 
     useEffect(()=>{

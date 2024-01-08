@@ -218,12 +218,16 @@ const usePlayer = () => {
         for(let i=0; i<20; i++){
             power+=getPageNr(i+1).innerItem.value;
         }
+        if(page1.innerItem.category==page6.innerItem.category && page1.innerItem.category==page11.innerItem.category && page1.innerItem.category==page16.innerItem.category){
+            power+=20;
+        }
         setCurrentPower(power);
     }
 
     const setCurrentGold = (newGold: number) => {
         dispatch(setGold(newGold));
     }
+
 
     return ({
         setPageNr, getPageNr, setSelectedToThis, setCurrentPower, setCurrentGold, page1, page2, page3, page4, page5, page6, page7, page8, page9, page10, page11, page12, page13, page14, page15, page16, page17, page18, page19, page20, 
