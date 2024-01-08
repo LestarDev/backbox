@@ -142,7 +142,7 @@ const initialState: CounterState = {
     Sheild: 0,
     Energy: 10,
     Power: 0,
-    Gold: 5
+    Gold: 500
 }
 
 export const currencySlice = createSlice({

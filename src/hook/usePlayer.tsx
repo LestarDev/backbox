@@ -221,6 +221,9 @@ const usePlayer = () => {
         if(page1.innerItem.category==page6.innerItem.category && page1.innerItem.category==page11.innerItem.category && page1.innerItem.category==page16.innerItem.category){
             power+=20;
         }
+        if(page1.innerItem.category==page2.innerItem.category && page1.innerItem.category==page3.innerItem.category && page1.innerItem.category==page4.innerItem.category && page1.innerItem.category==page5.innerItem.category){
+            power+=25;
+        }
         setCurrentPower(power);
     }
 
