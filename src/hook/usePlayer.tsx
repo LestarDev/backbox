@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setPage1, setPage10, setPage11, setPage12, setPage13, setPage14, setPage15, setPage16, setPage17, setPage18, setPage19, setPage2, setPage20, setPage3, setPage4, setPage5, setPage6, setPage7, setPage8, setPage9 } from "../shared/config/currentSlice";
+import { setGold, setPage1, setPage10, setPage11, setPage12, setPage13, setPage14, setPage15, setPage16, setPage17, setPage18, setPage19, setPage2, setPage20, setPage3, setPage4, setPage5, setPage6, setPage7, setPage8, setPage9, setPower } from "../shared/config/currentSlice";
 import item from "../config/content/ContentConfig";
 
 const usePlayer = () => {
 
     const dispatch = useDispatch();
 
-    const {page1, page2, page3, page4, page5, page6, page7, page8, page9, page10, page11, page12, page13, page14, page15, page16, page17, page18, page19, page20} = (useSelector((state) => state) as any).currency;
+    const {page1, page2, page3, page4, page5, page6, page7, page8, page9, page10, page11, page12, page13, page14, page15, page16, page17, page18, page19, page20, HP, Shield, Energy, Power, Gold} = (useSelector((state) => state) as any).currency;
 
     const setPageNr = (which: number, i: item, m: boolean = false) =>{
         switch(which){
@@ -208,8 +208,27 @@ const usePlayer = () => {
         setPageNr(indexOfPage, getPageNr(indexOfPage+1).innerItem, true);
     }
 
+    const setCurrentPower = (newPower: number) => {
+        dispatch(setPower(newPower));
+    }
+
+    const reSumPower = () => {
+        let power: number = 0;
+
+        for(let i=0; i<20; i++){
+            power+=getPageNr(i+1).innerItem.value;
+        }
+        setCurrentPower(power);
+    }
+
+    const setCurrentGold = (newGold: number) => {
+        dispatch(setGold(newGold));
+    }
+
     return ({
-        setPageNr, getPageNr, setSelectedToThis, page1, page2, page3, page4, page5, page6, page7, page8, page9, page10, page11, page12, page13, page14, page15, page16, page17, page18, page19, page20
+        setPageNr, getPageNr, setSelectedToThis, setCurrentPower, setCurrentGold, page1, page2, page3, page4, page5, page6, page7, page8, page9, page10, page11, page12, page13, page14, page15, page16, page17, page18, page19, page20, 
+        HP, Shield, Energy, Power, Gold,
+        reSumPower
     })
 
 }

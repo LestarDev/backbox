@@ -32,6 +32,8 @@ interface CounterState {
   HP: number,
   Sheild: number,
   Energy: number,
+  Power: number,
+  Gold: number
 }
 
 // Define the initial state using that type
@@ -92,7 +94,7 @@ const initialState: CounterState = {
         index: 10
     },
     page12: {
-        innerItem: Empty,
+        innerItem: IronSword,
         mutliColor: false,
         index: 11
     },
@@ -139,6 +141,8 @@ const initialState: CounterState = {
     HP: 10,
     Sheild: 0,
     Energy: 10,
+    Power: 0,
+    Gold: 5
 }
 
 export const currencySlice = createSlice({
@@ -208,11 +212,22 @@ export const currencySlice = createSlice({
         setPage20: (state, action: PayloadAction<pageType>) => {
             state.page20 = action.payload;
           },
-
+        setHP: (state, action: PayloadAction<number>) => {
+            state.HP = action.payload;
+        },
+        setPower: (state, action: PayloadAction<number>) => {
+            state.Power = action.payload;
+        },
+        setGold: (state, action: PayloadAction<number>) => {
+            state.Gold = action.payload;
+        }
+    
     
   },
 })
 
-export const { setPage1, setPage2, setPage3, setPage4, setPage5, setPage6, setPage7, setPage8, setPage9, setPage10, setPage11, setPage12, setPage13, setPage14, setPage15, setPage16, setPage17, setPage18, setPage19, setPage20 } = currencySlice.actions
+export const { setPage1, setPage2, setPage3, setPage4, setPage5, setPage6, setPage7, setPage8, setPage9, setPage10, setPage11, setPage12, setPage13, setPage14, setPage15, setPage16, setPage17, setPage18, setPage19, setPage20,
+setHP, setPower, setGold
+} = currencySlice.actions
 
 export default currencySlice.reducer

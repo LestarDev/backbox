@@ -6,6 +6,8 @@ const GameScreen = () => {
 
     const player = usePlayer();
 
+    player.reSumPower();
+
     return <div className="GameScreen">
         <SinglePlace {...player.page1} key={player.page1.index} />
         <SinglePlace {...player.page2} key={player.page2.index}/>

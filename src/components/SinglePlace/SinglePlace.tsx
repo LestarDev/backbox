@@ -1,7 +1,8 @@
 import './SinglePlace.css'
-import { KeyboardEventHandler, MouseEventHandler, MutableRefObject, createRef, useEffect, useRef } from 'react'
+import { KeyboardEventHandler, MouseEventHandler, MutableRefObject, useEffect, useRef } from 'react'
 import usePlayer from '../../hook/usePlayer'
 import pageType from '../../shared/config/pageType'
+import Empty from '../../config/content/other/Empty'
 
 const SinglePlace = (props: pageType) => {
 
@@ -63,12 +64,17 @@ const SinglePlace = (props: pageType) => {
         console.log($e);
 
         player.setSelectedToThis(props.index);
-        
+        divRef.current.focus();
 
     }
 
     const addSelectedClass = () => {
         return props.mutliColor ? "selected" : "";
+    }
+
+    const sellItem = () => {
+        player.setCurrentGold(player.Gold+props.innerItem.price);
+        player.setPageNr(props.index, Empty);
     }
 
     const moveItem: KeyboardEventHandler = ($e) => {
@@ -85,6 +91,9 @@ const SinglePlace = (props: pageType) => {
                 break;
             case 'ArrowDown':
                 moveItemDown();
+                break;
+            case 'Backspace':
+                sellItem();
                 break;
 
         }
