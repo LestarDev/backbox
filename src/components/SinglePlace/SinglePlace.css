@@ -1,0 +1,18 @@
+.SinglePlace{
+    width: 10rem;
+    height: 10rem;
+    filter: drop-shadow(0 0 0.5em #B99976);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(#D2B48C, #664229);
+    border-radius: 15px;
+    width: 7rem;
+    height: 7rem;
+    margin: auto;
+    border: 0.5rem solid #664229;
+}
+
+.selected{
+    box-shadow: inset 0px 0px 5px 6px rgba(0,0,0,0.75);
+}
