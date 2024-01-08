@@ -1,0 +1,20 @@
+.ShopItemPlace{
+    width: 10rem;
+    height: 10rem;
+    filter: drop-shadow(0 0 0.5em #664229);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(#B99976, #492f1d);
+    border-radius: 15px;
+    width: 7rem;
+    height: 7rem;
+    margin: auto;
+    border: 0.5rem solid #492f1d;
+    flex-direction: column;
+}
+
+.ShopItemPlace span{
+    display: flex;
+    align-items: center;
+}
