@@ -17,3 +17,36 @@
     outline: none;
     box-shadow: inset 0px 0px 5px 6px rgba(0,0,0,0.75);
 }
+
+.hide-description{
+    display: none;
+    flex-direction: column;
+}
+
+.SinglePlace:hover{
+    z-index: 99;
+}
+
+.SinglePlace:hover .hide-description{
+    display: flex;
+    position: absolute;
+    width: 12rem;
+    /* height: 8rem; */
+    /* transform: translateX(100%); */
+    background: radial-gradient(#D2B48C, #664229);
+    filter: drop-shadow(0 0 0.5em #664229);
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    top: -0.5rem;
+    left: calc(8rem + 2px);
+    border: 2px dashed black;
+}
+
+.SinglePlace.Empty:hover .hide-description{
+    display: none;
+}
+
+.hide-description span{
+    margin: 0 0 1rem 0;
+}

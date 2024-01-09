@@ -106,6 +106,10 @@ const SinglePlace = (props: pageType) => {
 
     return <div tabIndex={1} className={props.innerItem.category+" SinglePlace "+addSelectedClass()} ref={divRef} onKeyDown={moveItem} onMouseDown={changeSelected}>
         <img src={props.innerItem.img} alt={props.innerItem.name} />
+        <div className='hide-description'>
+            <p>{props.innerItem.description}</p>
+            <span>Get: {props.innerItem.value}dmg/s</span>
+        </div>
     </div>
 }
 
